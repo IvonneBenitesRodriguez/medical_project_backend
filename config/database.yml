@@ -4,6 +4,7 @@ default: &default
   pool: 5
   username: postgres
   password: 1234569
+  host: localhost
 
 development:
   <<: *default
