@@ -19,7 +19,7 @@ end
 
 group :development do
   gem "web-console"
-  gem "error_highlight", ">= 0.4.0"
+  gem "error_highlight", ">= 0.6.0"
 end
 
 group :test do
