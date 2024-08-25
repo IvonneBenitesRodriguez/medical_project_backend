@@ -1,9 +1,10 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: 5
+  username: postgres
+  password: 1234569
   host: localhost
-  port: 5432
 
 development:
   <<: *default
@@ -30,6 +31,4 @@ production:
   <<: *default
   database: medical_project_database_production
   username: postgres
-  password: <%= ENV["MEDICAL_PROJECT_DATABASE_DATABASE_PASSWORD"] %>
-  host: <%= ENV["DATABASE_HOST"] %>
-  port: <%= ENV["DATABASE_PORT"] %>
+  password: <%= ENV["MEDICAL_PROJECT_DATABASE_PASSWORD"] %>

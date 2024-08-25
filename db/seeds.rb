@@ -7,3 +7,16 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# Professions 
+professions = ['Medical Student', 'Doctor', 'Institution', 'Other']
+professions.each do |profession|
+    Profession.find_or_create_by(name: profession)
+end
+
+# Specialties
+specialties = ['Cardiology', 'Internal Medicine', 'Surgery', 'Ginecology', 'Neurology']
+specialties.each do |specialty|
+    Specialty.find_or_create_by(name: specialty)
+end
+
