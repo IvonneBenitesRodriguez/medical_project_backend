@@ -8,6 +8,7 @@ gem "pg", ">= 1.2"
 gem "puma", ">= 5.0"
 gem "importmap-rails"
 gem "turbo-rails"
+gem "rack-cors"
 gem "stimulus-rails"
 gem "jbuilder"
 gem "bootsnap", require: false

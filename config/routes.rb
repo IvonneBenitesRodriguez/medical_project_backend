@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   # Routes for my API
   namespace :api do
     namespace :v1 do
-      resources :users, only: [:create, :index, :show, :update, :destroy]
-      resources :professions, only: [:index]
-      resources :specialties, only: [:index]
+      resources :users, only: [ :create, :index, :show, :update, :destroy ]
+      resources :professions, only: [ :index ]
+      resources :specialties, only: [ :index ]
     end
   end
 end
