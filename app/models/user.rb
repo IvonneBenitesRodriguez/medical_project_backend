@@ -8,5 +8,3 @@ class User < ApplicationRecord
     has_many :user_specialties
     has_many :specialties, through: :user_specialties
 end
-
-
