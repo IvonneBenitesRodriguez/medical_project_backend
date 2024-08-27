@@ -29,6 +29,7 @@ test:
 # ensure the database is located in a persisted volume.
 production:
   <<: *default
-  database: medical_project_database_production
-  username: postgres
-  password: <%= ENV["MEDICAL_PROJECT_DATABASE_PASSWORD"] %>
+  # database: medical_project_database_production
+  # username: postgres
+  # password: <%= ENV["MEDICAL_PROJECT_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
