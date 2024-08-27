@@ -20,13 +20,9 @@ test:
   database: medical_project_database_test
   username: postgres
   password: 1234569
-
 # SQLite3 write its data on the local filesystem, as such it requires
 # persistent disks. If you are deploying to a managed service, you should
 # make sure it provides disk persistence, as many don't.
 #
 # Similarly, if you deploy your application as a Docker container, you must
 # ensure the database is located in a persisted volume.
-production:
-  <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
