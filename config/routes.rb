@@ -1,23 +1,21 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Define the root route
-  root "home#index"
-  
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
-
-  # Render dynamic PWA files from app/views/pwa/*
-  get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
-  get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-
-  # Routes for my API
+  # Definir las rutas de tu API
   namespace :api do
     namespace :v1 do
-      resources :users, only: [ :create, :index, :show, :update, :destroy ]
-      resources :professions, only: [ :index ]
-      resources :specialties, only: [ :index ]
+      resources :users, only: [:create, :index, :show, :update, :destroy]
+      resources :professions, only: [:index]
+      resources :specialties, only: [:index]
     end
   end
+
+  # Revelar el estado de salud en /up
+  get 'up', to: 'rails/health#show', as: :rails_health_check
+
+  # Rutas adicionales para servicios como PWA
+  get 'service-worker', to: 'rails/pwa#service_worker', as: :pwa_service_worker
+  get 'manifest', to: 'rails/pwa#manifest', as: :pwa_manifest
+
+  # Rutas para manejar archivos estáticos (si es necesario)
+  # Puedes eliminar esta línea si no usas archivos estáticos desde Rails
+  # get '*path', to: 'static#index'
 end
