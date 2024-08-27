@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # Definir las rutas de tu API
+  # Rutas para la API
   namespace :api do
     namespace :v1 do
       resources :users, only: [:create, :index, :show, :update, :destroy]
@@ -8,14 +8,15 @@ Rails.application.routes.draw do
     end
   end
 
-  # Revelar el estado de salud en /up
+  # Rutas para otros servicios
   get 'up', to: 'rails/health#show', as: :rails_health_check
-
-  # Rutas adicionales para servicios como PWA
   get 'service-worker', to: 'rails/pwa#service_worker', as: :pwa_service_worker
   get 'manifest', to: 'rails/pwa#manifest', as: :pwa_manifest
 
-  # Rutas para manejar archivos estáticos (si es necesario)
-  # Puedes eliminar esta línea si no usas archivos estáticos desde Rails
+  # Ruta catch-all para el frontend React
+  # Si React maneja el enrutamiento del lado del cliente, esta ruta debe estar al final
+  get '*path', to: 'application#index', constraints: ->(request) { !request.xhr? && request.format.html? }
+
+  # Puedes eliminar o comentar esta línea si no usas archivos estáticos desde Rails
   # get '*path', to: 'static#index'
 end
