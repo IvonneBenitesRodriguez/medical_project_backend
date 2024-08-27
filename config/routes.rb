@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: ->(_) { [204, {}, []] }
   # Rutas para la API
   namespace :api do
     namespace :v1 do
