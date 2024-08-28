@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   # Ruta catch-all para el frontend React
   # Si React maneja el enrutamiento del lado del cliente, esta ruta debe estar al final
-  get '*path', to: 'application#index', constraints: ->(request) { !request.xhr? && request.format.html? }
+  # get '*path', to: 'application#index', constraints: ->(request) { !request.xhr? && request.format.html? }
 
   # Puedes eliminar o comentar esta línea si no usas archivos estáticos desde Rails
   # get '*path', to: 'static#index'
