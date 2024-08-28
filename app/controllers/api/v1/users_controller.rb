@@ -2,6 +2,7 @@ class Api::V1::UsersController < ApplicationController
     skip_before_action :verify_authenticity_token
   
     def create
+        Rails.logger.info("Parametros recibidos: #{user_params.inspect}")
       @user = User.new(user_params)
       if @user.save
         render json: @user, status: :created
