@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
  
+  root to: redirect('/index.html')
+
   # Rutas para la API
   namespace :api do
     namespace :v1 do
